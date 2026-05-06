@@ -1,0 +1,266 @@
+// Payment Styles
+$primary-color: #2563eb;
+$error-color: #dc2626;
+$success-color: #16a34a;
+$border-color: #e5e7eb;
+$text-color: #1f2937;
+$light-text-color: #6b7280;
+
+.paymentPage {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+
+  h1 {
+    margin-bottom: 2rem;
+    text-align: center;
+    color: $text-color;
+    font-size: 1.75rem;
+  }
+
+  .successMessage,
+  .errorMessage {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 6px;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .successMessage {
+    background-color: #dcfce7;
+    color: #166534;
+    border: 1px solid #86efac;
+  }
+
+  .errorMessage {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+  }
+}
+
+.paymentMethodSelector {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.methodOption {
+  position: relative;
+
+  input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+
+    &:checked + label {
+      border-color: $primary-color;
+      background-color: #eff6ff;
+
+      .icon {
+        transform: scale(1.1);
+      }
+    }
+
+    &:disabled + label {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border: 2px solid $border-color;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      border-color: $primary-color;
+      background-color: #f8fafc;
+    }
+  }
+
+  .icon {
+    font-size: 2rem;
+    transition: transform 0.2s;
+  }
+
+  .name {
+    display: block;
+    font-weight: 600;
+    color: $text-color;
+    flex: 1;
+  }
+
+  .description {
+    display: block;
+    font-size: 0.875rem;
+    color: $light-text-color;
+  }
+}
+
+.paymentForm {
+  background: #f9fafb;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.stripeForm {
+  .formGroup {
+    margin-bottom: 1.5rem;
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: $text-color;
+    }
+  }
+
+  .cardElement {
+    padding: 0.75rem;
+    border: 2px solid $border-color;
+    border-radius: 6px;
+    background: white;
+    transition: all 0.2s;
+
+    &:focus-within {
+      border-color: $primary-color;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+  }
+
+  .error {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  .payButton {
+    width: 100%;
+    padding: 1rem;
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover:not(:disabled) {
+      background-color: #1d4ed8;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+      transform: translateY(-2px);
+    }
+
+    &:disabled {
+      background-color: #9ca3af;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.paypalForm {
+  .paypalButton {
+    width: 100%;
+    padding: 1rem;
+    background-color: #0070ba;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover:not(:disabled) {
+      background-color: #005ea6;
+      box-shadow: 0 4px 12px rgba(0, 112, 186, 0.3);
+      transform: translateY(-2px);
+    }
+
+    &:disabled {
+      background-color: #9ca3af;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.securityInfo {
+  text-align: center;
+  padding: 1rem;
+  background-color: #f0fdf4;
+  border: 1px solid #86efac;
+  border-radius: 6px;
+  color: #166534;
+  font-size: 0.875rem;
+  line-height: 1.5;
+
+  p {
+    margin: 0;
+  }
+}
+
+// Responsive
+@media (max-width: 600px) {
+  .container {
+    padding: 1.5rem;
+
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .methodOption {
+    label {
+      gap: 0.75rem;
+      padding: 0.75rem;
+    }
+
+    .icon {
+      font-size: 1.5rem;
+    }
+
+    .name {
+      font-size: 0.95rem;
+    }
+
+    .description {
+      font-size: 0.8rem;
+    }
+  }
+
+  .stripeForm,
+  .paypalForm {
+    .payButton,
+    .paypalButton {
+      padding: 0.875rem;
+      font-size: 0.95rem;
+    }
+  }
+}
