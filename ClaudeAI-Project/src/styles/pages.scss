@@ -1,0 +1,224 @@
+@import "./variables.scss";
+
+.page-header {
+  background: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%);
+  color: $white;
+  padding: $spacing-2xl $spacing-lg;
+  margin-bottom: $spacing-3xl;
+
+  h1 {
+    color: $white;
+    font-size: 2.5rem;
+    margin-bottom: $spacing-md;
+  }
+
+  p {
+    color: rgba($white, 0.9);
+    font-size: 1.1rem;
+  }
+}
+
+.page-content {
+  .container {
+    max-width: 900px;
+  }
+
+  h2 {
+    margin-bottom: $spacing-2xl;
+    color: $dark-color;
+  }
+
+  p {
+    margin-bottom: $spacing-lg;
+    color: $gray-600;
+    line-height: 1.8;
+  }
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: $spacing-lg;
+
+  label {
+    display: block;
+    margin-bottom: $spacing-sm;
+    font-weight: $font-weight-semibold;
+    color: $dark-color;
+  }
+
+  input,
+  textarea,
+  select {
+    width: 100%;
+    padding: $spacing-md;
+    border: 2px solid $gray-300;
+    border-radius: $border-radius-lg;
+    font-size: 1rem;
+    font-family: $font-family;
+    transition: all $transition-base;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+      box-shadow: 0 0 0 3px rgba($primary-color, 0.1);
+    }
+
+    &:disabled {
+      background-color: $gray-100;
+      color: $gray-500;
+      cursor: not-allowed;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+}
+
+.form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Card Styles */
+.card {
+  background: $white;
+  border-radius: $border-radius-lg;
+  padding: $spacing-2xl;
+  box-shadow: $shadow-md;
+  border: 1px solid $gray-200;
+  transition: all $transition-base;
+
+  &:hover {
+    box-shadow: $shadow-lg;
+  }
+
+  &-header {
+    margin-bottom: $spacing-lg;
+    padding-bottom: $spacing-lg;
+    border-bottom: 2px solid $gray-200;
+  }
+
+  h3 {
+    margin: 0;
+    color: $dark-color;
+  }
+}
+
+/* Alert Styles */
+.alert {
+  padding: $spacing-lg $spacing-lg;
+  border-radius: $border-radius-lg;
+  margin-bottom: $spacing-lg;
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-md;
+
+  &-success {
+    background-color: rgba($success-color, 0.1);
+    border: 1px solid $success-color;
+    color: darken($success-color, 20%);
+  }
+
+  &-error {
+    background-color: rgba($danger-color, 0.1);
+    border: 1px solid $danger-color;
+    color: darken($danger-color, 20%);
+  }
+
+  &-warning {
+    background-color: rgba($warning-color, 0.1);
+    border: 1px solid $warning-color;
+    color: darken($warning-color, 60%);
+  }
+
+  &-info {
+    background-color: rgba($primary-color, 0.1);
+    border: 1px solid $primary-color;
+    color: darken($primary-color, 20%);
+  }
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: $spacing-lg;
+
+  thead {
+    background-color: $light-color;
+  }
+
+  th,
+  td {
+    padding: $spacing-md;
+    text-align: left;
+    border-bottom: 1px solid $gray-200;
+  }
+
+  th {
+    font-weight: $font-weight-semibold;
+    color: $dark-color;
+  }
+
+  tr:hover {
+    background-color: $light-color;
+  }
+}
+
+/* Badge Styles */
+.badge {
+  display: inline-block;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: $border-radius-full;
+  font-size: 0.875rem;
+  font-weight: $font-weight-semibold;
+
+  &-primary {
+    background-color: rgba($primary-color, 0.1);
+    color: $primary-color;
+  }
+
+  &-success {
+    background-color: rgba($success-color, 0.1);
+    color: $success-color;
+  }
+
+  &-danger {
+    background-color: rgba($danger-color, 0.1);
+    color: $danger-color;
+  }
+
+  &-warning {
+    background-color: rgba($warning-color, 0.1);
+    color: darken($warning-color, 30%);
+  }
+}
+
+@media (max-width: 768px) {
+  .page-header {
+    padding: $spacing-xl $spacing-md;
+
+    h1 {
+      font-size: 1.75rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  .card {
+    padding: $spacing-lg;
+  }
+
+  table {
+    font-size: 0.9rem;
+
+    th,
+    td {
+      padding: $spacing-sm;
+    }
+  }
+}

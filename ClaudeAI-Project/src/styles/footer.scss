@@ -1,0 +1,95 @@
+@import "./variables.scss";
+
+.footer {
+  background: linear-gradient(
+    135deg,
+    $dark-color 0%,
+    darken($dark-color, 10%) 100%
+  );
+  color: $white;
+  padding: $spacing-3xl $spacing-lg;
+  margin-top: $spacing-3xl;
+  border-top: 1px solid rgba($white, 0.1);
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: $spacing-3xl;
+    margin-bottom: $spacing-3xl;
+  }
+
+  h3 {
+    color: $white;
+    margin-bottom: $spacing-lg;
+    font-size: 1.125rem;
+    font-weight: $font-weight-semibold;
+  }
+
+  p {
+    color: rgba($white, 0.8);
+    line-height: 1.8;
+    margin-bottom: $spacing-md;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin-bottom: $spacing-md;
+
+      a {
+        color: rgba($white, 0.7);
+        font-weight: $font-weight-medium;
+        transition: all $transition-base;
+        display: inline-block;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -2px;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background: linear-gradient(90deg, $primary-color, $secondary-color);
+          transition: width $transition-base;
+        }
+
+        &:hover {
+          color: $white;
+          text-decoration: none;
+
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba($white, 0.15);
+    padding-top: $spacing-2xl;
+    text-align: center;
+    color: rgba($white, 0.6);
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: $spacing-2xl $spacing-md;
+
+    .container {
+      grid-template-columns: 1fr;
+      gap: $spacing-2xl;
+      margin-bottom: $spacing-2xl;
+    }
+
+    .footer-bottom {
+      padding-top: $spacing-lg;
+    }
+  }
+}

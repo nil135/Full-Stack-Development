@@ -1,0 +1,105 @@
+@import "./variables.scss";
+
+.navbar {
+  background: $white;
+  box-shadow: $shadow-md;
+  position: sticky;
+  top: 0;
+  z-index: $z-sticky;
+  transition: all $transition-base;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $spacing-md $spacing-lg;
+    height: 80px;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: $font-weight-bold;
+    background: linear-gradient(135deg, $primary-color, $secondary-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    transition: transform $transition-base;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    gap: $spacing-2xl;
+    list-style: none;
+    align-items: center;
+
+    a {
+      color: $gray-700;
+      font-weight: $font-weight-medium;
+      transition: all $transition-base;
+      position: relative;
+      padding: $spacing-sm 0;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, $primary-color, $secondary-color);
+        transition: width $transition-base;
+      }
+
+      &:hover {
+        color: $primary-color;
+        text-decoration: none;
+
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .cart-icon {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    transition: all $transition-base;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+
+    &:hover {
+      transform: scale(1.15);
+      color: $primary-color;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    .container {
+      height: 70px;
+      padding: $spacing-sm $spacing-md;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+    }
+
+    .nav-links {
+      gap: $spacing-lg;
+      font-size: 0.9rem;
+    }
+  }
+}
