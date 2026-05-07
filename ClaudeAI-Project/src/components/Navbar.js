@@ -1,10 +1,14 @@
 'use client';
 
 import Link from 'next/link';
-import { Navbar, Container, Nav } from 'react-bootstrap';
-import styles from '../styles/navbar.scss';
+import { Navbar, Container, Nav, Badge } from 'react-bootstrap';
+import styles from '@/styles/navbar.scss';
+import { useCart } from '@/context/CartContext';
 
 export default function NavbarComponent() {
+     const { getTotalItems } = useCart();
+     const cartItemsCount = getTotalItems();
+
      return (
           <Navbar bg="light" expand="lg" sticky="top" className="navbar-custom shadow-sm">
                <Container>
@@ -28,6 +32,11 @@ export default function NavbarComponent() {
                               </Nav.Link>
                               <Nav.Link as={Link} href="/cart" className="btn btn-primary text-white ms-2">
                                    🛒 Cart
+                                   {cartItemsCount > 0 && (
+                                        <Badge bg="danger" className="ms-2">
+                                             {cartItemsCount}
+                                        </Badge>
+                                   )}
                               </Nav.Link>
                          </Nav>
                     </Navbar.Collapse>

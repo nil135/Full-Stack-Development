@@ -85,7 +85,7 @@
 .card {
   background: $white;
   border-radius: $border-radius-lg;
-  padding: $spacing-2xl;
+  padding: $spacing-md;
   box-shadow: $shadow-md;
   border: 1px solid $gray-200;
   transition: all $transition-base;
@@ -97,6 +97,11 @@
   &-header {
     margin-bottom: $spacing-lg;
     padding-bottom: $spacing-lg;
+    border-bottom: 2px solid $gray-200;
+  }
+
+  &-body {
+    padding: $spacing-md 0;
     border-bottom: 2px solid $gray-200;
   }
 

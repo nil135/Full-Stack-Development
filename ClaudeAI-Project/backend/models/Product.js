@@ -9,6 +9,7 @@ const products = [
           stock: 50,
           rating: 4.8,
           reviews: 124,
+          image: '/products/headphones.jpg',
      },
      {
           id: 2,
@@ -19,6 +20,7 @@ const products = [
           stock: 30,
           rating: 4.6,
           reviews: 89,
+          image: '/products/smartwatch.jpg',
      },
      {
           id: 3,
@@ -29,6 +31,7 @@ const products = [
           stock: 100,
           rating: 4.9,
           reviews: 256,
+          image: '/products/charger.jpg',
      },
      {
           id: 4,
@@ -39,6 +42,7 @@ const products = [
           stock: 200,
           rating: 4.7,
           reviews: 412,
+          image: '/products/cable.jpg',
      },
      {
           id: 5,
@@ -49,6 +53,7 @@ const products = [
           stock: 25,
           rating: 4.5,
           reviews: 67,
+          image: '/products/backpack.jpg',
      },
      {
           id: 6,
@@ -59,6 +64,7 @@ const products = [
           stock: 150,
           rating: 4.4,
           reviews: 178,
+          image: '/products/phone-stand.jpg',
      },
 ];
 

@@ -6,6 +6,7 @@
     $dark-color 0%,
     darken($dark-color, 10%) 100%
   );
+  margin: $spacing-3xl 0 0;
   color: $white;
   padding: $spacing-3xl $spacing-lg;
   margin-top: $spacing-3xl;

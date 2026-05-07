@@ -8,6 +8,7 @@
   border-radius: 0;
   position: relative;
   overflow: hidden;
+  margin: $spacing-2xl 0;
 
   &::before {
     content: "";
@@ -69,6 +70,7 @@
 }
 
 .products-section {
+  margin: $spacing-3xl 0;
   padding: $spacing-3xl 0;
   background: $light-color;
 

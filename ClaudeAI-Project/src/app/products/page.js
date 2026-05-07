@@ -1,7 +1,7 @@
 'use client';
 
 import { Container, Row, Col } from 'react-bootstrap';
-import ProductCard from '@/components/ProductCard';
+import ProductCard from '../../components/ProductCard';
 
 const mockProducts = [
      {

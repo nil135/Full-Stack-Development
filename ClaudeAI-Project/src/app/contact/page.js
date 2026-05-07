@@ -2,6 +2,7 @@
 
 import { Container, Form, Button } from 'react-bootstrap';
 import { useState } from 'react';
+import { toast } from 'react-toastify';
 
 export default function Contact() {
      const [formData, setFormData] = useState({
@@ -22,7 +23,10 @@ export default function Contact() {
      const handleSubmit = (e) => {
           e.preventDefault();
           console.log('Form submitted:', formData);
-          alert('Thank you for your message! We will get back to you soon.');
+          toast.success('✅ Thank you for your message! We will get back to you soon.', {
+               position: 'top-right',
+               autoClose: 3000,
+          });
           setFormData({ name: '', email: '', subject: '', message: '' });
      };
 

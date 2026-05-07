@@ -99,7 +99,7 @@ const mockProducts = [
           id: 6,
           name: 'Phone Stand',
           price: 24.99,
-          image: '/products/stand.jpg',
+          image: '/products/phone-stand.jpg',
           description: 'Adjustable stand for all phones',
           rating: 4.4,
           reviews: 178,
